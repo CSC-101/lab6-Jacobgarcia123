@@ -64,15 +64,67 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
+    def test_selection_sort_books_1(self):
+        input1 = data.Book(['Patti Smith', ''], 'Just Kids')
+        input2 = data.Book(['Toni Morrison', ''], 'The Bluest Eye')
+        input3 = data.Book(['Rick Rubin', ''], 'The Creative Act')
+        input = [input1,input2,input3]
+        expected = ['Just Kids','The Bluest Eye','The Creative Act']
+        actual = lab6.selection_sort_books(input)
+        self.assertEqual(expected, actual)
+    def test_selection_sort_books_1(self):
+        input1 = data.Book(['', ''], 'x')
+        input2 = data.Book(['', ''], 'a')
+        input3 = data.Book(['', ''], 'd')
+        input = [input1,input2,input3]
+        expected = ['a','d','x']
+        actual = lab6.selection_sort_books(input)
+        self.assertEqual(expected, actual)
+
 
 
     # Part 2
+    def test_swap_case_1(self):
+        input = 'HeLLo wOrLd'
+        expected = 'hEllO WoRlD'
+        actual = lab6.swap_case(input)
+        self.assertEqual(expected, actual)
+    def test_swap_case_2(self):
+        input = 'goodbye WORLD'
+        expected = 'GOODBYE world'
+        actual = lab6.swap_case(input)
+        self.assertEqual(expected, actual)
 
 
     # Part 3
+    def test_str_translate_1(self):
+        input = 'hello world'
+        input2 = 'l'
+        input3 = 'x'
+        expected = 'hexxo worxd'
+        actual = lab6.str_translate(input,input2,input3)
+        self.assertEqual(expected, actual)
+    def test_str_translate_2(self):
+        input = 'aaacccdadadppp'
+        input2 = 'a'
+        input3 = 'r'
+        expected = 'rrrcccdrdrdppp'
+        actual = lab6.str_translate(input,input2,input3)
+        self.assertEqual(expected, actual)
 
 
     # Part 4
+    def test_histogram_1(self):
+        input = 'helloworld helloworld computer ok computer'
+        expected = {'helloworld': 2, 'computer':2, 'ok': 1}
+        actual = lab6.histogram(input)
+        self.assertEqual(expected, actual)
+    def test_histogram_2(self):
+        input = 'apple apple apple '
+        expected = {'apple':3}
+        actual = lab6.histogram(input)
+        self.assertEqual(expected, actual)
+
 
 
 
